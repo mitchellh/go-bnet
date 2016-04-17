@@ -41,6 +41,6 @@ func (r *Response) parseMeta() {
 
 	// Parse the reset time
 	if v := r.Response.Header.Get("X-Plan-Quota-Reset"); v != "" {
-		r.QuotaReset, _ = time.Parse("Monday January 2, 2006 3:04:05 PM MST", v)
+		r.QuotaReset, _ = time.Parse("Monday, January 2, 2006 3:04:05 PM MST", v)
 	}
 }

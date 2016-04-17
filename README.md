@@ -47,3 +47,16 @@ client := bnet.NewClient(oauthClient)
 
 // ... API calls
 ```
+
+### API Calls
+
+Once a client is made, basic API calls can easliy be made:
+
+```
+user, resp, err := client.Account().User()
+fmt.Printf("User: %#v", user)
+```
+
+All API calls return a `*Response` value in addition to a richer type
+and error. The response contains the http.Response as well as metadata
+such as quotas, QPS, etc. from Battle.net
