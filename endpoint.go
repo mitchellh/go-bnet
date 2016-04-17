@@ -2,6 +2,7 @@ package bnet
 
 import (
 	"fmt"
+	"strings"
 	"sync"
 
 	"golang.org/x/oauth2"
@@ -16,8 +17,9 @@ var brokenMap map[string]struct{}
 // Endpoint returns the endpoint for the given region. This doesn't
 // validate the region name so you must use one that is valid from Battle.net.
 func Endpoint(region string) oauth2.Endpoint {
+	region = strings.ToLower(region)
 	domain := fmt.Sprintf("https://%s.battle.net/", region)
-	if region == "CN" {
+	if region == "cn" {
 		domain = "https://www.battlenet.com.cn/"
 	}
 

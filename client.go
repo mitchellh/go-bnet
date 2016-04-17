@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"strings"
 )
 
 const (
@@ -38,6 +39,8 @@ type Client struct {
 // oauth2 Go library NewClient function. It must be a client that
 // automatically injects authentication details into requests.
 func NewClient(region string, c *http.Client) *Client {
+	region = strings.ToLower(region)
+
 	if c == nil {
 		c = http.DefaultClient
 	}
