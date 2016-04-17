@@ -8,6 +8,10 @@ client, this package provides OAuth endpoints.
 
 **Build Status:** [![Build Status](https://travis-ci.org/mitchellh/go-bnet.svg?branch=master)](https://travis-ci.org/mitchellh/go-bnet)
 
+**API Coverage:** Currently only the account information API is implemented.
+However, the base helpers are there to easily and quickly implement any other
+APIs such as the WoW or SC2 data.
+
 ## Usage
 
 ```go
