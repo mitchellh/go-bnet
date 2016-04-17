@@ -21,11 +21,11 @@ func TestAccountService_User(t *testing.T) {
 
 	actual, _, err := client.Account().User()
 	if err != nil {
-		t.Errorf("err: %s", err)
+		t.Fatalf("err: %s", err)
 	}
 
 	want := &User{ID: 12345, BattleTag: "foobar#1234"}
 	if !reflect.DeepEqual(actual, want) {
-		t.Errorf("returned %+v, want %+v", actual, want)
+		t.Fatalf("returned %+v, want %+v", actual, want)
 	}
 }
