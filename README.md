@@ -5,6 +5,7 @@ go-bnet is a Go client library for accessing the
 client, this package provides OAuth endpoints.
 
 **Documentation:** [![GoDoc](https://godoc.org/github.com/mitchellh/go-bnet?status.svg)](https://godoc.org/github.com/mitchellh/go-bnet)
+
 **Build Status:** [![Build Status](https://travis-ci.org/mitchellh/go-bnet.svg?branch=master)](https://travis-ci.org/mitchellh/go-bnet)
 
 ## Usage
