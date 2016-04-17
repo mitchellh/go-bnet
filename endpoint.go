@@ -12,7 +12,7 @@ import (
 // broken with the OAuth2 library. Battle.net uses a "broken" implementation
 // of OAuth2.
 var brokenLock sync.Mutex
-var brokenMap map[string]struct{}
+var brokenMap = map[string]struct{}{}
 
 // Endpoint returns the endpoint for the given region. This doesn't
 // validate the region name so you must use one that is valid from Battle.net.
