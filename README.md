@@ -53,7 +53,7 @@ client := bnet.NewClient(oauthClient)
 
 Once a client is made, basic API calls can easliy be made:
 
-```
+```go
 user, resp, err := client.Account().User()
 fmt.Printf("User: %#v", user)
 ```
