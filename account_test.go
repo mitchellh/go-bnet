@@ -20,6 +20,7 @@ func TestAccountService_User(t *testing.T) {
 	})
 
 	actual, _, err := client.Account().User()
+	fmt.Print(actual)
 	if err != nil {
 		t.Fatalf("err: %s", err)
 	}
