@@ -1,12 +1,16 @@
 <component name="libraryTable">
   <library name="GOPATH &lt;go-bnet-fork&gt;">
     <CLASSES>
+      <root url="file://$USER_HOME$/work/src/gopkg.in" />
       <root url="file://$USER_HOME$/work/src/github.com" />
       <root url="file://$USER_HOME$/work/src/golang.org" />
+      <root url="file://$USER_HOME$/work/src/buffalo_api" />
     </CLASSES>
     <SOURCES>
+      <root url="file://$USER_HOME$/work/src/gopkg.in" />
       <root url="file://$USER_HOME$/work/src/github.com" />
       <root url="file://$USER_HOME$/work/src/golang.org" />
+      <root url="file://$USER_HOME$/work/src/buffalo_api" />
     </SOURCES>
     <excluded>
       <root url="file://$PROJECT_DIR$" />
