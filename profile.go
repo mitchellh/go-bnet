@@ -13,7 +13,7 @@ type SC2Profile struct {
 // SC2() calls the /sc2/profile/user endpoint. This endpoint uses OAuth2
 // to retrieve a user's Starcraft 2 profile. See Battle.net docs.
 func (s *ProfileService) SC2() (*SC2Profile, *Response, error) {
-	req, err := s.client.NewRequest("GET", "/sc2/profile/user", nil)
+	req, err := s.client.NewRequest("GET", "sc2/profile/user", nil)
 	if err != nil {
 		return nil, nil, err
 	}
