@@ -69,6 +69,10 @@ func (c *Client) Account() *AccountService {
 	return &AccountService{client: c}
 }
 
+func (c *Client) Profile() *ProfileService {
+	return &ProfileService{client: c}
+}
+
 // NewRequest creates an API request. A relative URL can be provided in urlStr,
 // in which case it is resolved relative to the BaseURL of the Client.
 // Relative URLs should always be specified without a preceding slash.  If
