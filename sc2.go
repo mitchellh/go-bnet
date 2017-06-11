@@ -70,7 +70,7 @@ type Achievement struct {
 
 // Achievements represents achievement information for a Starcraft 2 profile.
 type Achievements struct {
-	Points Points `json:"points"`
+	Points       Points        `json:"points"`
 	Achievements []Achievement `json:"achievements"`
 }
 
