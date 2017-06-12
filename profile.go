@@ -1,5 +1,9 @@
 package bnet
 
+import (
+	"github.com/nmccrory/go-bnet/sc2"
+	"github.com/nmccrory/go-bnet/wow"
+)
 // ProfileService has OAuth Profile APIs. See Client.
 type ProfileService struct {
 	client *Client
@@ -7,12 +11,12 @@ type ProfileService struct {
 
 // SC2Profile represents the profile information for a user's Starcraft 2 profile.
 type SC2Profile struct {
-	Characters []SC2Character `json:"characters"`
+	Characters []sc2.SC2Character `json:"characters"`
 }
 
 // WoWProfile is a collection of a user's World of Warcraft characters.
 type WoWProfile struct {
-	Characters []WoWCharacter `json:"characters"`
+	Characters []wow.WoWCharacter `json:"characters"`
 }
 
 // SC2() calls the /sc2/profile/user endpoint. This endpoint uses OAuth2
