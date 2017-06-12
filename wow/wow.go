@@ -1,8 +1,11 @@
-package bnet
+package wow
 
+import (
+	"github.com/nmccrory/go-bnet"
+)
 // WoWService has World of Warcraft related APIs. See Client.
 type WoWService struct {
-	client *Client
+	client *bnet.Client
 }
 
 // Spec represents a character's class spec
