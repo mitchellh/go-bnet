@@ -1,5 +1,10 @@
 package bnet
 
+// WoWService has World of Warcraft related APIs. See Client.
+type WoWService struct {
+	client *Client
+}
+
 // Spec represents a character's class spec
 // (e.g. Frost Mage, Marksmanship Hunter, etc.)
 type Spec struct {
