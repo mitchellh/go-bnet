@@ -1,12 +1,4 @@
-package sc2
-
-import (
-	"github.com/nmccrory/go-bnet"
-)
-// SC2Service has Starcraft2-related APIs. See Client.
-type SC2Service struct {
-	client *bnet.Client
-}
+package bnet
 
 // TODO: Create a 'Campaign' struct to represent a character's campaign progress.
 
