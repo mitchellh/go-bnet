@@ -1,5 +1,10 @@
 package bnet
 
+// SC2Service has Startcraft 2 related APIs.
+type SC2Service struct {
+	client *Client
+}
+
 // TODO: Create a 'Campaign' struct to represent a character's campaign progress.
 
 // CharacterImage is a character's portrait or avatar.
