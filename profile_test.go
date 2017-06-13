@@ -5,6 +5,8 @@ import(
 	"net/http"
 	"testing"
 	"reflect"
+	"github.com/nmccrory/go-bnet/sc2"
+	"github.com/nmccrory/go-bnet/wow"
 )
 const sc2ProfileResp = `{ "characters":
 				[{
@@ -72,6 +74,30 @@ const sc2ProfileResp = `{ "characters":
 				    }
 				}]
 			}`
+const wowCharactersResp = `{ "characters":
+				[{
+				    "name": "foobar",
+				    "realm": "foobar",
+				    "battleGroup": "Foo",
+				    "class": 1,
+				    "race": 1,
+				    "gender": 0,
+				    "level": 99,
+				    "achievementPoints": 1234,
+				    "thumbnail": "foobar/123/avatar.jpg",
+				    "spec": {
+					"name": "foobar",
+					"role": "foobar",
+					"backgroundImage": "foo-bar",
+					"icon": "foo_bar",
+					"description": "Quick brown fox jumps over the lazy dog.",
+					"order": 1
+				    },
+				    "guild": "Foo",
+				    "guildRealm": "foobar",
+				    "lastModified": 1234567
+				}]
+			}`
 
 func TestProfileService_SC2(t *testing.T) {
 	setup()
@@ -85,7 +111,7 @@ func TestProfileService_SC2(t *testing.T) {
 		t.Fatalf("err: %s", err)
 	}
 	if actual.Characters == nil {
-		t.Fatal("err: Profile is empty -> &SC2Profile{Characters: []SC2Character{}(nil)}")
+		t.Fatal("err: This user has no Starcraft 2 profile.")
 	}
 	want := SC2Character{ID: 1234567,
 		Realm: 1,
@@ -106,6 +132,40 @@ func TestProfileService_SC2(t *testing.T) {
 		Achievements: Achievements{Points{1234},
 			[]Achievement{Achievement{123456789, 123456789}}},
 	}
+	if !reflect.DeepEqual(actual.Characters[0], want) {
+		t.Fatalf("returned %+v, want %+v", actual.Characters[0], want)
+	}
+}
+
+func TestProfileService_WoW(t *testing.T) {
+	setup()
+	defer teardown()
+	mux.HandleFunc("/wow/user/characters", func(w http.ResponseWriter, r *http.Request) {
+		testMethod(t, r, "GET")
+		fmt.Fprint(w, wowCharactersResp)
+	})
+	actual, _, err := client.Profile().WoW()
+	if err != nil {
+		t.Fatalf("err: %s", err)
+	}
+	if actual.Characters == nil {
+		t.Fatal("err: This user has no World of Warcraft characters.")
+	}
+	want := WoWCharacter{
+		Name: "foobar",
+		Realm: "foobar",
+		BattleGroup: "Foo",
+		Class: 1,
+		Race: 1,
+		Gender: 0,
+		Level: 99,
+		AchievementPoints: 1234,
+		Thumbnail: "foobar/123/avatar.jpg",
+		Spec: wow.Spec{"foobar", "foobar", "foo-bar", "foo_bar",
+		"Quick brown fox jumps over the lazy dog.", 1},
+		Guild: "Foo",
+		GuildRealm: "foobar",
+		LastModified: 1234567 }
 	if !reflect.DeepEqual(actual.Characters[0], want) {
 		t.Fatalf("returned %+v, want %+v", actual.Characters[0], want)
 	}
