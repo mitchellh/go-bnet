@@ -113,24 +113,24 @@ func TestProfileService_SC2(t *testing.T) {
 	if actual.Characters == nil {
 		t.Fatal("err: This user has no Starcraft 2 profile.")
 	}
-	want := sc2.SC2Character{ID: 1234567,
+	want := SC2Character{ID: 1234567,
 		Realm: 1,
 		DisplayName: "foobar",
 		ClanName: "foobar",
 		ClanTag: "foobar",
 		ProfilePath: "/profile/1234567/1/foobar/",
-		Portrait: sc2.CharacterImage{-10, -10, 10, 10, 10,
+		Portrait: CharacterImage{-10, -10, 10, 10, 10,
 			"http://media.blizzard.com/sc2/portraits/dummy.jpg"},
-		Career: sc2.Career{"PROTOSS", 0, 0, 0,
+		Career: Career{"PROTOSS", 0, 0, 0,
 			"DIAMOND", 0, 100},
-		SwarmLevels: sc2.SwarmLevels{10,
-			sc2.Level{1, 1000, 0},
-			sc2.Level{2, 1000, 0},
-			sc2.Level{3, 1000, 0}},
-		Season: sc2.Season{123, 1, 2017, 0},
-		Rewards: sc2.Rewards{[]int{12345678, 12345678}, []int{12345678, 12345678}},
-		Achievements: sc2.Achievements{sc2.Points{1234},
-			[]sc2.Achievement{sc2.Achievement{123456789, 123456789}}},
+		SwarmLevels: SwarmLevels{10,
+			Level{1, 1000, 0},
+			Level{2, 1000, 0},
+			Level{3, 1000, 0}},
+		Season: Season{123, 1, 2017, 0},
+		Rewards: Rewards{[]int{12345678, 12345678}, []int{12345678, 12345678}},
+		Achievements: Achievements{Points{1234},
+			[]Achievement{Achievement{123456789, 123456789}}},
 	}
 	if !reflect.DeepEqual(actual.Characters[0], want) {
 		t.Fatalf("returned %+v, want %+v", actual.Characters[0], want)
@@ -151,7 +151,7 @@ func TestProfileService_WoW(t *testing.T) {
 	if actual.Characters == nil {
 		t.Fatal("err: This user has no World of Warcraft characters.")
 	}
-	want := wow.WoWCharacter{
+	want := WoWCharacter{
 		Name: "foobar",
 		Realm: "foobar",
 		BattleGroup: "Foo",
