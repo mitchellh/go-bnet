@@ -1,6 +1,6 @@
 package bnet
 
-// SC2Service has Starcraft2-related APIs. See Client.
+// SC2Service has Startcraft 2 related APIs.
 type SC2Service struct {
 	client *Client
 }
@@ -91,4 +91,6 @@ type SC2Character struct {
 	Rewards      Rewards        `json:"rewards"`
 	Achievements Achievements   `json:"achievements"`
 }
+
+
 
