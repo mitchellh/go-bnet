@@ -5,8 +5,6 @@ import(
 	"net/http"
 	"testing"
 	"reflect"
-	"github.com/nmccrory/go-bnet/sc2"
-	"github.com/nmccrory/go-bnet/wow"
 )
 const sc2ProfileResp = `{ "characters":
 				[{
@@ -161,7 +159,7 @@ func TestProfileService_WoW(t *testing.T) {
 		Level: 99,
 		AchievementPoints: 1234,
 		Thumbnail: "foobar/123/avatar.jpg",
-		Spec: wow.Spec{"foobar", "foobar", "foo-bar", "foo_bar",
+		Spec: Spec{"foobar", "foobar", "foo-bar", "foo_bar",
 		"Quick brown fox jumps over the lazy dog.", 1},
 		Guild: "Foo",
 		GuildRealm: "foobar",
