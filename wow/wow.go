@@ -1,4 +1,4 @@
-package bnet
+package wow
 
 // Spec represents a character's class spec
 // (e.g. Frost Mage, Marksmanship Hunter, etc.)
@@ -27,3 +27,4 @@ type WoWCharacter struct {
 	GuildRealm        string `json:"guildRealm"`
 	LastModified      int    `json:"lastModified"`
 }
+

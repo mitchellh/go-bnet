@@ -1,4 +1,4 @@
-package bnet
+package profile
 
 import (
 	"fmt"
