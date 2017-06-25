@@ -1,9 +1,5 @@
 package sc2
 
-import (
-	"github.com/mitchellh/go-bnet"
-)
-
 // TODO: Create a 'Campaign' struct to represent a character's campaign progress.
 
 // CharacterImage is a character's portrait or avatar.
