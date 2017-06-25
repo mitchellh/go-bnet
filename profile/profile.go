@@ -1,9 +1,9 @@
 package profile
 
 import (
-	"github.com/mitchellh/go-bnet"
-	"github.com/mitchellh/go-bnet/sc2"
-	"github.com/mitchellh/go-bnet/wow"
+	"github.com/nmccrory/go-bnet"
+	"github.com/nmccrory/go-bnet/sc2"
+	"github.com/nmccrory/go-bnet/wow"
 )
 
 // ProfileService has OAuth Profile APIs. See Client.
