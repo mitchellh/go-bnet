@@ -1,7 +1,7 @@
 package profile
 
 import (
-	"github.com/nmccrory/go-bnet"
+	"github.com/mitchellh/go-bnet"
 )
 
 // AccountService has account-related APIs. See Client.

@@ -2,7 +2,7 @@ package sc2
 
 import (
 	"fmt"
-	"github.com/nmccrory/go-bnet"
+	"github.com/mitchellh/go-bnet"
 )
 
 type ProfileService struct {

@@ -5,7 +5,7 @@ import (
 	"strings"
 	"net/http"
 	"net/url"
-	"github.com/nmccrory/go-bnet"
+	"github.com/mitchellh/go-bnet"
 )
 
 const (

@@ -5,8 +5,8 @@ import(
 	"net/http"
 	"testing"
 	"reflect"
-	"github.com/nmccrory/go-bnet/sc2"
-	"github.com/nmccrory/go-bnet/wow"
+	"github.com/mitchellh/go-bnet/sc2"
+	"github.com/mitchellh/go-bnet/wow"
 )
 
 const sc2ProfileResp = `{ "characters":
