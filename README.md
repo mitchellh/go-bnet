@@ -8,7 +8,7 @@ client, this package provides OAuth endpoints.
 
 **Build Status:** [![Build Status](https://travis-ci.org/mitchellh/go-bnet.svg?branch=master)](https://travis-ci.org/mitchellh/go-bnet)
 
-**API Coverage:** Currently only the account information API is implemented.
+**API Coverage:** Currently only the account and profile information APIs are implemented.
 However, the base helpers are there to easily and quickly implement any other
 APIs such as the WoW or SC2 data.
 
@@ -40,15 +40,15 @@ oauthCfg := &oauth2.Config{
 }
 ```
 
-Once you have access to the OAuth client, you can initilize the Battle.net
-API client:
+Once you have access to the OAuth client, you can import and initilize one of the Battle.net
+API clients:
 
 ```go
 // Token from prior auth
 authClient := oauthCfg.Client(oauth2.NoContext, token)
 
-// Initialize the client
-client := bnet.NewClient(oauthClient)
+// Initialize the Battle.net Profile API client
+client := profile.NewClient("us", authClient)
 
 // ... API calls
 ```
