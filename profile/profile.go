@@ -1,7 +1,7 @@
 package profile
 
 import (
-	"github.com/nmccrory/go-bnet"
+	"github.com/mitchellh/go-bnet"
 	"github.com/nmccrory/go-bnet/sc2"
 	"github.com/nmccrory/go-bnet/wow"
 )
