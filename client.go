@@ -3,20 +3,22 @@ package bnet
 import (
 	"bytes"
 	"encoding/json"
-	"fmt"
 	"io"
+	"fmt"
+	"strings"
 	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 )
+
 
 const (
 	libraryVersion = "0.1"
 	userAgent      = "go-bnet/" + libraryVersion
 )
 
-// Client is the API client for Battle.net. Create this using NewClient.
+// Client is the API client for Battle.net.
+// Create this using one of the Battle.net libary's NewClient functions.
 // This can also be constructed manually but it isn't recommended.
 type Client struct {
 	// Client is the HTTP client to use for communication.
@@ -57,20 +59,13 @@ func NewClient(region string, c *http.Client) *Client {
 		// never really fail unless the user gives us a REALLY bad region.
 		panic(err)
 	}
-
 	return &Client{
 		Client:    c,
+
 		BaseURL:   baseURL,
+
 		UserAgent: userAgent,
 	}
-}
-
-func (c *Client) Account() *AccountService {
-	return &AccountService{client: c}
-}
-
-func (c *Client) Profile() *ProfileService {
-	return &ProfileService{client: c}
 }
 
 // NewRequest creates an API request. A relative URL can be provided in urlStr,
@@ -130,7 +125,7 @@ func (c *Client) Do(req *http.Request, v interface{}) (*Response, error) {
 	if err := CheckError(resp); err != nil {
 		return response, err
 	}
-
+	fmt.Print(response)
 	if v != nil {
 		if w, ok := v.(io.Writer); ok {
 			io.Copy(w, resp.Body)
