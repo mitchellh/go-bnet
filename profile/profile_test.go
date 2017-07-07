@@ -114,7 +114,7 @@ func TestProfileService_SC2(t *testing.T) {
 	if actual.Characters == nil {
 		t.Fatal("err: This user has no Starcraft 2 profile.")
 	}
-	want := sc2.SC2Character{
+	want := sc2.Character{
 		ID: 1234567,
 		Realm: 1,
 		DisplayName: "foobar",
@@ -153,7 +153,7 @@ func TestProfileService_WoW(t *testing.T) {
 	if actual.Characters == nil {
 		t.Fatal("err: This user has no World of Warcraft characters.")
 	}
-	want := wow.WoWCharacter{
+	want := wow.Character{
 		Name: "foobar",
 		Realm: "foobar",
 		BattleGroup: "Foo",

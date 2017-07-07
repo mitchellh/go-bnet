@@ -13,12 +13,12 @@ type ProfileService struct {
 
 // SC2Profile represents the profile information for a user's Starcraft 2 profile.
 type SC2Profile struct {
-	Characters []sc2.SC2Character `json:"characters"`
+	Characters []sc2.Character `json:"characters"`
 }
 
 // WoWProfile is a collection of a user's World of Warcraft characters.
 type WoWProfile struct {
-	Characters []wow.WoWCharacter `json:"characters"`
+	Characters []wow.Character `json:"characters"`
 }
 
 // SC2() calls the /sc2/profile/user endpoint. This endpoint uses OAuth2

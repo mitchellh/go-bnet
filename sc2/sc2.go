@@ -2,6 +2,24 @@ package sc2
 
 // TODO: Create a 'Campaign' struct to represent a character's campaign progress.
 
+// Character represents a character in a user's Starcraft 2 profile.
+type Character struct {
+	ID           int            `json:"id"`
+	Realm        int            `json:"realm"`
+	Name         string	    `json:"name"`
+	DisplayName  string	    `json:"displayName"`
+	ClanName     string	    `json:"clanName"`
+	ClanTag      string	    `json:"clanTag"`
+	ProfilePath  string	    `json:"profilePath"`
+	Portrait     CharacterImage `json:"portrait"`
+	Avatar	     CharacterImage `json:"avatar"`
+	Career	     Career	    `json:"career"`
+	SwarmLevels  SwarmLevels    `json:"swarmLevels"`
+	Season	     Season         `json:"season"`
+	Rewards      Rewards        `json:"rewards"`
+	Achievements Achievements   `json:"achievements"`
+}
+
 // CharacterImage is a character's portrait or avatar.
 type CharacterImage struct {
 	X      int    `json:"x"`
@@ -67,22 +85,4 @@ type Achievement struct {
 type Achievements struct {
 	Points       Points        `json:"points"`
 	Achievements []Achievement `json:"achievements"`
-}
-
-// SC2Character represents a character in a user's Starcraft 2 profile.
-type SC2Character struct {
-	ID           int            `json:"id"`
-	Realm        int            `json:"realm"`
-	Name         string	    `json:"name"`
-	DisplayName  string	    `json:"displayName"`
-	ClanName     string	    `json:"clanName"`
-	ClanTag      string	    `json:"clanTag"`
-	ProfilePath  string	    `json:"profilePath"`
-	Portrait     CharacterImage `json:"portrait"`
-	Avatar	     CharacterImage `json:"avatar"`
-	Career	     Career	    `json:"career"`
-	SwarmLevels  SwarmLevels    `json:"swarmLevels"`
-	Season	     Season         `json:"season"`
-	Rewards      Rewards        `json:"rewards"`
-	Achievements Achievements   `json:"achievements"`
 }

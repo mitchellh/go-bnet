@@ -125,7 +125,7 @@ func (c *Client) Do(req *http.Request, v interface{}) (*Response, error) {
 	if err := CheckError(resp); err != nil {
 		return response, err
 	}
-
+	fmt.Print(response)
 	if v != nil {
 		if w, ok := v.(io.Writer); ok {
 			io.Copy(w, resp.Body)
