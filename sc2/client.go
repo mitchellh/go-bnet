@@ -54,3 +54,8 @@ func NewClient(region string, c *http.Client) *Client {
 		},
 	}
 }
+
+// Profile is the hook to a Starcraft 2 Profile service.
+func (c *Client) Profile() *ProfileService {
+	return &ProfileService{client: c}
+}
